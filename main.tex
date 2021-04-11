@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+% \usepackage{fontspec}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+% \usepackage{mathptmx}
+\usepackage{times}
+\usepackage[export]{adjustbox}
+\usepackage[a4paper,headheight=15pt]{geometry}
+% \usepackage[a4paper,top=3cm,bottom=3cm,left=3.5cm,right=3cm,marginparwidth=1.75cm,headheight=15pt]{geometry}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{fancyhdr}
+\usepackage{romannum}
+
+\pagestyle{fancy}
+\fancyhead[L]{\textsc{Tian Zichen}}
+\fancyhead[C]{\textsc{NTU - EE6129}}
+\fancyhead[R]{\textsc{Assignment \Romannum{2}}}
+
+\setlength{\parindent}{0in} % Set paragraph indent as 0
+\setlength{\parskip}{1em} % Set the paragraph skip
+\setstretch{1.15}
+% \setmainfont{Times New Roman}
+
+\begin{document}
+\pagenumbering{arabic}
+% \subject{EE6129 Assignment 02}
+\title{\textbf{MIMO in LTE and 5G Wireless Network}}
+% \setkomafont{author}{\scshape}
+\author{\textsc{Tian Zichen}\\ \normalsize{G2002883L, ztian002@e.ntu.edu.sg}}
+\date{}
+\maketitle
+
+\begin{abstract}
+    This essay briefly introduces the usage of the MIMO technique in 3GPP LTE and 5G wireless networks. \Cref{sec:4G} reviews the formulation of conventional MIMO specified by 3GPP, like 1-D antenna array, AAS, RAN4 SI and EB/FB-MIMO SI. Then it leads to the development of mMIMO in 5G standards. \Cref{sec:5G} describes the mMIMO and its main features. The mMIMO performs well in spectral efficiency and energy saving. The small cell mMIMO plays a vital role in this. In real-time realization, the mMIMO are designed in different arrangements and can be used in user-localization.
+\end{abstract}
+
+\section{MIMO in 3GPP-LTE}
+\label{sec:4G}
+\subsection{Development}
+The usage of MIMO is a big gap between 3G and 4G. MIMO enables a novelty point-to-point link and some good features like down-link multiusers~\cite{li2010mimo}. A large family of MIMO techniques are designed with different kinds of channel state information (CSI).
+
+The development of MIMO has gone through a long way. It was defined as the critical technology since the very early 3GPP LTE releases (LTE Rel. 8). In the beginning, the LTE specification only focuses on the 1-D antenna array, with only eight antenna ports. 3GPP later carried out the RAN4 SI for the active antenna array system (AAS), a flexible structure supporting different MIMO schemes. In this AAS, the antenna array can be 2-D and be extended to horizontal and vertical dimensions. After that, the 3-D channel model SI was initiated for elevation beam-forming and full-dimensional MIMO. Furthermore, in the 3GPP LTE Rel. 12, the EB/FD-MIMO SI was released~\cite{gpp201536}.
+
+Compared with the LTE technique, the 5G wireless network aims to provide high data rates, low latency, good base station capacity, and significant improvement in users' quality of service (QoS)~\cite{agiwal2016next}. Experiments of novel mMIMO in 5G are widely conducted.
+
+\section{Massive MIMO in 5G}
+\label{sec:5G}
+
+\subsection{Features}
+The mMIMO is a dense version of MU-MIMO. A multi-user multiple-input multiple-output (MU-MIMO) system equips the base station with several antennas serving users. The Massive MIMO (mMIMO, also known as large-scale antenna systems, full-dimension MIMO, very large MIMO) is to employ a large-scale antenna array, as many as hundreds of antennas in the single BS. They can serve the surrounding mobile phones, IoT devices and other kinds of wireless terminals simultaneously~\cite{larsson2017massive}. The third generation partnership project (3GPP) new radio (NR) specifies the mMIMO to be one critical technology in the power-saving plan. This MIMO scheme has many advantages.
+
+The good features provided by massive MIMO (mMIMO) include 1) Spectral efficiency; 2) energy-eco property; 3) array-gain; 4) robust against Small-scale fading; 5) equal QoS for users; 6) digital processing per antenna.
+
+The mMIMO performs well in spectral efficiency and energy saving~\cite{ngo2013energy,lopez2021survey}. Compared with 4G MIMO, the mMIMO offers cell spectral efficiency, which is achieved by the spatial multiplexing of the terminals. Combined with small cells and additional bandwidth, this feature can create vast gains in throughput per unit area~\cite{papadopoulos2016massive}. Energy consumption is another feature, mainly reduced by the effect of array gain and the signal's digital processing. The leveraging of extensive beam-forming and spatial multiplexing capability makes mMIMO significantly small power consumption for BS to achieve targeted capacity.
+
+The mMIMO small cells are the primary way to achieve spectral efficiency per unit area~\cite{papadopoulos2016massive}. There once thought existing a conflict between the small cell (distributed antenna modules) and the massive antenna array (mMIMO BSs). However, in the 5G network, the balance between the two is achieved. The array gain offsets the inter-cell interference pass-loss.
+
+\subsection{Implementation}
+The mMIMO array configuration varies for different situation~\cite{riadi2017overview}. By arranging the antenna array and radio-frequency module, the mMIMO can be divided into the following categories. 2-D: 1) Linear antenna array; 3-D: 2) cylindrical antenna array; 3) spherical antenna array; 4) rectangular antenna array; 5) distributed antenna array. The spherical, cylindrical and rectangular types are more practical in a real-world implementation. With the above array configurations, the mMIMO can fit the urban environment well.
+
+A critical application for mMIMO is user localization~\cite{wen2019survey}. For indirect localization, researchers tried to do localization for multiple access points through angle-difference-of-arrival~\cite{palacios2017jade}. Method using factor graphs is proposed, which is applicable when LOS path is not available~\cite{mendrzik2018joint}. For direct localization, the AOAs parameters of LOS paths are not required. The mMIMO enables the accurate estimation of AOAs of multipath components~\cite{hu2014esprit}.
+
+
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{ref.bib}
+
+\end{document}
